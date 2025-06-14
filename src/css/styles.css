@@ -1,18 +1,153 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+body {
+  align-items: center;
+}
+
+.form {
+  margin-top: 36px;
+}
+
+input {
+  width: 272px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+
+  font-family: 'e-Ukraine', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+  margin-top: 20px;
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+input:active {
+  border: 1px solid #4e75ff;
+}
+
+button {
+  background: #4e75ff;
+  border: transparent;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+
+  font-family: 'e-Ukraine', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+button:hover {
+  background: #6c8cff;
+}
+
+.gallery {
+  justify-content: center;
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery > li {
+  min-width: 360px;
+  flex-basis: calc((100% - 24px) / 4);
+}
+
+.image-box {
+  position: relative;
+  border: 1px solid #808080;
+  width: 360px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-stats {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+
+.image-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-stat .label {
+  font-weight: 600;
+  font-size: 12px;
+
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.image-stat .value {
+  font-weight: 400;
+  font-size: 12px;
+
+  line-height: 200%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
